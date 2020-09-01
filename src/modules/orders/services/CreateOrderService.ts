@@ -80,8 +80,6 @@ class CreateOrderService {
       );
     }
 
-    await this.productsRepository.updateQuantity(orderedProductsQuantity);
-
     const serializedProducts = products.map(product => ({
       product_id: product.id,
       quantity: product.quantity,
@@ -92,6 +90,8 @@ class CreateOrderService {
       customer: customerExits,
       products: serializedProducts,
     });
+
+    await this.productsRepository.updateQuantity(orderedProductsQuantity);
 
     return order;
   }

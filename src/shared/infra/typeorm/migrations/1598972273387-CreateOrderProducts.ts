@@ -19,12 +19,10 @@ export default class CreateOrderProducts1598972273387
             type: 'decimal',
             precision: 10,
             scale: 2,
-            isNullable: false,
           },
           {
             name: 'quantity',
-            type: 'numeric',
-            isNullable: false,
+            type: 'int',
           },
           {
             name: 'created_at',
